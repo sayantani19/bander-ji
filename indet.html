@@ -1,0 +1,624 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Cute Bander 🐒💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Comic Sans MS", "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffe9c9);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.7s ease;
+}
+
+.card {
+    background: rgba(255,255,255,0.92);
+    padding: 35px 25px;
+    border-radius: 30px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border: 3px solid white;
+}
+
+h1 {
+    color: #ff4f87;
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #ff6194;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #5f4050;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.emoji {
+    font-size: 70px;
+    margin: 10px;
+    animation: bounce 1.5s infinite;
+}
+
+/* GIFT */
+
+.gift {
+    margin: 35px auto 20px;
+    width: 130px;
+    height: 100px;
+    background: #ff5d8f;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+.gift:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background: #ffd166;
+    left: 52px;
+}
+
+.gift:after {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 25px;
+    background: #ff477e;
+    top: -15px;
+    left: -7px;
+    border-radius: 6px;
+}
+
+.gift-text {
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    left: 0;
+    font-size: 18px;
+    color: #ff477e;
+    font-weight: bold;
+}
+
+.flower {
+    font-size: 100px;
+    animation: flowerPop 1s ease;
+    margin: 15px;
+}
+
+.flower-message {
+    font-size: 21px;
+    color: #e83e73;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    background: #ff5d8f;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 7px 15px rgba(255,80,130,0.3);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #ff3f79;
+}
+
+/* 1000 SORRY */
+
+.sorry-box {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3f7;
+    border-radius: 20px;
+    border: 2px dashed #ff8eb0;
+    color: #ff4f87;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* PAGE 5 */
+
+.options {
+    position: relative;
+    height: 180px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    position: absolute;
+}
+
+#yesBtn {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#noBtn {
+    left: 50%;
+    top: 90px;
+    transform: translateX(-50%);
+}
+
+/* CHOCOLATE */
+
+.chocolates {
+    font-size: 70px;
+    margin: 25px 0;
+    animation: chocolateBounce 1.3s infinite;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    font-size: 25px;
+    animation: float 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes flowerPop {
+    from {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes chocolateBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 30px 18px;
+    }
+
+    .sorry-box {
+        font-size: 16px;
+        max-height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<div class="emoji">🐒🎂</div>
+
+<h1>HAPPY BIRTHDAY BANDER! 🎉</h1>
+
+<p>
+Bohot khush rehna mere cute bander 🥹💗
+<br><br>
+Love you bohot saaraaa! 💕
+</p>
+
+<div class="gift" onclick="openGift()">
+<div class="gift-text">🎁 Click Here 🎁</div>
+</div>
+
+<div id="flowerArea"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<div class="emoji">🥺💗</div>
+
+<h2>1000 SORRYYYYY 😭</h2>
+
+<p>
+Maine bola tha na 1000 sorry... 
+toh loooo 😭😂
+</p>
+
+<div class="sorry-box" id="sorryBox"></div>
+
+<button onclick="nextPage(3)">
+Bas ab maaf bhi kar do 👉🥺
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+<div class="emoji">🥺🌸</div>
+
+<h2>Meri Jaan...</h2>
+
+<p>
+Meri jaan, mera exam chal raha tha
+isliye baat nahi kar payi thi. 🥺
+<br><br>
+
+I am really really sorry. 💗
+<br><br>
+
+Please mujhse gussa mat hona,
+mere cute bander. 🐒😭
+</p>
+
+<button onclick="nextPage(4)">
+One more thing... 🍫
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+<div class="emoji">🥰🍫</div>
+
+<h1>For Youuu! 💗</h1>
+
+<div class="chocolates">
+🍫🍫🍫🍫
+</div>
+
+<p>
+Itni saari chocolates sirf mere
+cute bander ke liye! 🐒💗
+</p>
+
+<p style="margin-top:15px;">
+But waittt... 👀
+<br>
+Ek important question hai...
+</p>
+
+<button onclick="nextPage(5)">
+Next 👉
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 5 -->
+
+<section class="page" id="page5">
+
+<div class="card">
+
+<div class="emoji">🥺🐒</div>
+
+<h2>Tum gussa to nhi ho na? 🥺</h2>
+
+<p>
+Sach sach batao...
+👀
+</p>
+
+<div class="options">
+
+<button class="option-btn" id="yesBtn" onclick="moveYes()">
+Hannnn hunnnn 😤
+</button>
+
+<button class="option-btn" id="noBtn" onclick="nextPage(6)">
+Nhi hun jaan 💗
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 6 -->
+
+<section class="page" id="page6">
+
+<div class="card">
+
+<div class="emoji">🐒😂🎂</div>
+
+<h1>
+MERA BANDER PURA 16 SAAL KA HO GEYAAAAA!!! 😂😂
+</h1>
+
+<p style="margin-top:20px;">
+Oyyyy hoyyyyy! 😂
+</p>
+
+<p style="margin-top:15px;">
+Mera chota bander 🐒💗
+<br><br>
+
+Ab officially 16 ka ho gaya! 😂🎂
+</p>
+
+<div style="font-size:65px; margin-top:20px;">
+🐒🎂🎉😂💗
+</div>
+
+<button onclick="restart()">
+🔄 Start Again
+</button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function showPage(number) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + number)
+        .classList.add("active");
+
+    createHearts();
+}
+
+
+function nextPage(number) {
+    showPage(number);
+}
+
+
+/* GIFT */
+
+function openGift() {
+
+    document.getElementById("flowerArea").innerHTML = `
+
+        <div class="flower">🌹</div>
+
+        <div class="flower-message">
+            A flower for my cute bander 🌹🐒💗
+        </div>
+
+        <button onclick="nextPage(2)">
+            Next surprise 👉
+        </button>
+
+    `;
+
+    createHearts();
+}
+
+
+/* 1000 SORRY */
+
+function create1000Sorry() {
+
+    const box = document.getElementById("sorryBox");
+
+    let text = "";
+
+    for (let i = 1; i <= 1000; i++) {
+
+        text += "Sorry ";
+
+        if (i % 10 === 0) {
+            text += "<br>";
+        }
+    }
+
+    box.innerHTML = text;
+}
+
+
+/* MOVING HANNNN HUNNNN */
+
+function moveYes() {
+
+    const button = document.getElementById("yesBtn");
+
+    const area = document.querySelector(".options");
+
+    const maxX = area.clientWidth - button.offsetWidth;
+    const maxY = area.clientHeight - button.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    button.style.left = randomX + "px";
+    button.style.top = randomY + "px";
+    button.style.transform = "none";
+}
+
+
+/* FLOATING HEARTS */
+
+function createHearts() {
+
+    for (let i = 0; i < 8; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            ["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+
+/* RESTART */
+
+function restart() {
+
+    showPage(1);
+
+    document.getElementById("flowerArea").innerHTML = "";
+
+    const yesBtn = document.getElementById("yesBtn");
+
+    yesBtn.style.left = "50%";
+    yesBtn.style.top = "0";
+    yesBtn.style.transform = "translateX(-50%)";
+}
+
+
+/* CREATE THE 1000 SORRIES WHEN PAGE LOADS */
+
+create1000Sorry();
+
+</script>
+
+</body>
+</html>
+```
